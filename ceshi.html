@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	请输入URL地址：<input type="url" id="url" value="http://youthliuxi.cn">
+	<button id="get">获取标题</button>
+	<div id="res"></div>
+</body>
+<script type="text/javascript">
+	var btn=document.getElementById('get');
+	var res=document.getElementById('res');
+	btn.addEventListener('click',function(e){
+		var url=document.getElementById('url').value,
+			xml= new XMLHttpRequest();
+		xml.onreadystatechange=function(){
+			if(xml.readState===4){
+				todo(xml.responseText);
+			}
+		}
+		xml.open('GET',rul,true);
+		xml.send();
+	});
+	function tudo(data){
+		var title=data.match(/<title>([\s\S]*)<\/title>/);
+		res.innerText="hello";
+	}
+</script>
+</html>
+<!--以上为获取url的title-->
+
+
+<!--以下为全屏-->
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+</head>
+<body >
+<button id="full"> 全屏</button>
+   <button id="exitFull">退出全屏</button>
+   <div>
+   </div>
+   <script>
+       var gui = require('nw.gui');
+       var win = gui.Window.get();
+       var fullBt = document.querySelector('#full');
+       fullBt.addEventListener("click", function (evt) {
+           win.enterFullscreen();
+       }, false);
+       var exitBt = document.querySelector('#exitFull');
+       exitBt.addEventListener("click", function (evt) {
+           win.leaveFullscreen();
+       }, false);  
+   </script>
+</body>
+</html>

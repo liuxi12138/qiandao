@@ -1,0 +1,12 @@
+{
+"name": "first demo",
+"main": "index.html",
+"author": "edward",
+"window": 
+{
+"title": "青春在线网站签到",
+"toolbar": false,
+"width": 1000,
+"height": 500
+}
+}
